@@ -1,3 +1,4 @@
+import MoveState from './with-move-state';
 import SlowCounter from './slow-counter';
 import WithMemo from './with-memo';
 
@@ -9,7 +10,8 @@ export default function Home() {
       </div>
       <div className="pt-20 font-mono">
         {/* <SlowCounter /> */}
-        <WithMemo />
+        {/* <WithMemo /> */}
+        <MoveState />
       </div>
     </main>
   );

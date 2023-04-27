@@ -1,14 +1,12 @@
 # UI Optimization
 
-### a.k.a. How to avoid wasted renders
-
----
-
 # What are wasted renders?
 
 - In `React`, these are the unnecessary render cycles caused by a state change
 
 - This is one of the most common issues that affects performance
+
+---
 
 # Solution - `React.memo`
 
@@ -22,37 +20,7 @@
 
 ---
 
-import SolutionMoveState from './src/solution-move-state';
-
 # Solution - Move the `state`
-
-<SolutionMoveState />
-
-```jsx
-export default function SolutionMoveState() {
-  return (
-    <>
-      <Form />
-      <VeryExpensiveComponent />
-    </>
-  );
-}
-
-function Form() {
-  const [backgroundColor, setBackgroundColor] = React.useState('');
-
-  return (
-    <>
-      <label>Enter my component background color</label>
-      <input
-        value={backgroundColor}
-        onChange={e => setBackgroundColor(e.target.value)}
-      />
-      <div style={{ ...boxStyle, backgroundColor }}>My component</div>
-    </>
-  );
-}
-```
 
 ---
 
@@ -60,32 +28,6 @@ function Form() {
 
 Moving the `state` won't work if it is needed somewhere above the expensive component.
 We can't just simply extract and move the `state` into its own component.
-
----
-
-import SlowApp2 from './src/slow-app-2';
-
-# Slow App - `state` needed in the app
-
-<SlowApp2 />
-
-```jsx
-export default function SlowApp2() {
-  const [backgroundColor, setBackgroundColor] = React.useState('');
-
-  return (
-    <div style={{ backgroundColor }}>
-      <label>Enter app background color</label>
-      <input
-        value={backgroundColor}
-        onChange={e => setBackgroundColor(e.target.value)}
-      />
-      <div style={boxStyle}>My component</div>
-      <VeryExpensiveComponent />
-    </div>
-  );
-}
-```
 
 ---
 
