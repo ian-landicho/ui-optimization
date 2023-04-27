@@ -2,7 +2,7 @@
 import * as React from 'react';
 import ExpensiveComponent from './expensive-component';
 
-export default function SlowCounter() {
+export default function WithMemo() {
   const [count, setCount] = React.useState(0);
 
   return (
@@ -15,7 +15,11 @@ export default function SlowCounter() {
         Increment
       </button>
       <div className="mt-6">Count: {count}</div>
-      <ExpensiveComponent />
+      <MemoExpensiveComponent />
     </div>
   );
 }
+
+const MemoExpensiveComponent = React.memo(function MemoExpensiveComponent() {
+  return <ExpensiveComponent />;
+});

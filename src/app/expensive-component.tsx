@@ -10,7 +10,7 @@ export default function ExpensiveComponent() {
   }
 
   return (
-    <div className="text-lg border-solid border-red-400 border-2 mt-10">
+    <div className="text-lg border-solid border-red-400 border-2 mt-10 p-2">
       Expensive component
     </div>
   );
