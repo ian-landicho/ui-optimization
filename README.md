@@ -31,37 +31,7 @@ We can't just simply extract and move the `state` into its own component.
 
 ---
 
-import SolutionUseChildren from './src/solution-use-children';
-
 # Solution - Use `children` prop
-
-<SolutionUseChildren />
-
-```jsx
-export default function SolutionUseChildren() {
-  return (
-    <AppBackgroundSetter>
-      <div style={boxStyle}>My component</div>
-      <VeryExpensiveComponent />
-    </AppBackgroundSetter>
-  );
-}
-
-function AppBackgroundSetter({ children }) {
-  const [backgroundColor, setBackgroundColor] = React.useState('');
-
-  return (
-    <div style={{ backgroundColor }}>
-      <label>Enter app background color</label>
-      <input
-        value={backgroundColor}
-        onChange={e => setBackgroundColor(e.target.value)}
-      />
-      {children}
-    </div>
-  );
-}
-```
 
 ---
 
@@ -70,32 +40,6 @@ function AppBackgroundSetter({ children }) {
 We grouped the app into two components:
 
 - `AppBackgroundSetter` that depends on the `backgroundColor` and the state itself:
-
-```jsx
-function AppBackgroundSetter({ children }) {
-  const [backgroundColor, setBackgroundColor] = React.useState('');
-
-  return (
-    <div style={{ backgroundColor }}>
-      <label>Enter app background color</label>
-      <input
-        value={backgroundColor}
-        onChange={e => setBackgroundColor(e.target.value)}
-      />
-      {children}
-    </div>
-  );
-}
-```
-
-- Our entry point which does not depend on the `backgroundColor` are passed to the `AppBackgroundSetter` as a `jsx`, aka the `children` prop:
-
-```jsx
-<AppBackgroundSetter>
-  <div style={boxStyle}>My component</div>
-  <VeryExpensiveComponent />
-</AppBackgroundSetter>
-```
 
 ## What's Happening?
 

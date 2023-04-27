@@ -1,6 +1,7 @@
 import MoveState from './with-move-state';
 import SlowCounter from './slow-counter';
 import WithMemo from './with-memo';
+import WithChildren from './with-children';
 
 export default function Home() {
   return (
@@ -11,7 +12,8 @@ export default function Home() {
       <div className="pt-20 font-mono">
         {/* <SlowCounter /> */}
         {/* <WithMemo /> */}
-        <MoveState />
+        {/* <MoveState /> */}
+        <WithChildren />
       </div>
     </main>
   );
