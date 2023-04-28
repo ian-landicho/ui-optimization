@@ -16,6 +16,7 @@ function Counter() {
 
   return (
     <div className={`text-lg p-4`}>
+      <p className="mb-6 text-xl">Moving the `state`</p>
       <button
         type="button"
         className="bg-gray-200 hover:bg-gray-300 active:bg-gray-400 px-2 py-1 rounded shadow-md uppercase"
@@ -28,7 +29,7 @@ function Counter() {
   );
 }
 
-// Moving the state won't work if it is needed somewhere above the expensive component.
+// Moving the state won't work if it the state is needed somewhere above the expensive component.
 // We can't just simply extract and move the state into its own component.
 // Example: If the count state is needed on top of the expensive component, we can't move it.
 // For example we want to change the background color of the main container based on the count state.
@@ -41,6 +42,7 @@ function MoveStateLimitations() {
         count % 2 === 0 ? 'bg-red-400' : 'bg-blue-400'
       }`}
     >
+      <p className="mb-6 text-xl">Moving the `state`</p>
       <button
         type="button"
         className="bg-gray-200 hover:bg-gray-300 active:bg-gray-400 px-2 py-1 rounded shadow-md uppercase"

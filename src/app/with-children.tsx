@@ -36,6 +36,7 @@ function Container({ children }: { children: React.ReactNode }) {
         count % 2 === 0 ? 'bg-red-400' : 'bg-blue-400'
       }`}
     >
+      <p className="mb-6 text-xl">Using `children` prop</p>
       <button
         type="button"
         className="bg-gray-200 hover:bg-gray-300 active:bg-gray-400 px-2 py-1 rounded shadow-md uppercase"
