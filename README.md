@@ -50,7 +50,3 @@ All components subscribed to the context will re-render on state change
 Before sprinkling `React.memo` all over our app, it might make more sense to examine our code and see how we could segregate components based on their responsibility and dependencies.
 
 When using `context` api, creating sub contexts based on their responsibility will also avoid wasted renders.
-
----
-
-# Questions?
