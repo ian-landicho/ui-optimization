@@ -1,8 +1,9 @@
-import MoveState from './with-move-state';
 import SlowCounter from './slow-counter';
 import WithMemo from './with-memo';
+import MoveState from './with-move-state';
 import WithChildren from './with-children';
 import WithSlowProvider from './with-slow-provider';
+import WithFastProvider from './with-fast-provider';
 
 export default function Home() {
   return (
@@ -15,7 +16,8 @@ export default function Home() {
         {/* <WithMemo /> */}
         {/* <MoveState /> */}
         {/* <WithChildren /> */}
-        <WithSlowProvider />
+        {/* <WithSlowProvider /> */}
+        <WithFastProvider />
       </div>
     </main>
   );
