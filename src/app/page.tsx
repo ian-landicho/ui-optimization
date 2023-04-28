@@ -12,12 +12,12 @@ export default function Home() {
         <code className="font-mono font-bold">UI Optimization</code>
       </div>
       <div className="pt-20 font-mono">
-        {/* <SlowCounter /> */}
+        <SlowCounter />
         {/* <WithMemo /> */}
         {/* <MoveState /> */}
         {/* <WithChildren /> */}
         {/* <WithSlowProvider /> */}
-        <WithFastProvider />
+        {/* <WithFastProvider /> */}
       </div>
     </main>
   );
