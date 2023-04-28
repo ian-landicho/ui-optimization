@@ -13,6 +13,7 @@ export default function Home() {
       </div>
       <div className="pt-20 font-mono">
         <SlowCounter />
+        {/* Uncomment these lines to see workign solutions */}
         {/* <WithMemo /> */}
         {/* <MoveState /> */}
         {/* <WithChildren /> */}
