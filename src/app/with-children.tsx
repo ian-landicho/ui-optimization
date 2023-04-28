@@ -49,3 +49,28 @@ function Container({ children }: { children: React.ReactNode }) {
     </div>
   );
 }
+
+/**
+ * This approach does not suffer from the same limitations as React.memo.
+ * Even if we pass the same object as a prop, the component will not re-render.
+ */
+type Props = {
+  payload: {
+    message: string;
+  };
+};
+
+function ExpensiveComponentWithProps(props: Props) {
+  console.log('Rendering expensive component...');
+
+  const now = performance.now();
+  while (performance.now() - now < 1500) {
+    // delay 1.5 seconds
+  }
+
+  return (
+    <div className="text-lg border-solid border-red-400 border-2 mt-10 p-2">
+      Expensive component
+    </div>
+  );
+}

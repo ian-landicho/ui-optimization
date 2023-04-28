@@ -30,9 +30,7 @@ function Counter() {
 }
 
 // Moving the state won't work if it the state is needed somewhere above the expensive component.
-// We can't just simply extract and move the state into its own component.
-// Example: If the count state is needed on top of the expensive component, we can't move it.
-// For example we want to change the background color of the main container based on the count state.
+// For example, let's say we want to change the background color of the main container based on the count state.
 function MoveStateLimitations() {
   const [count, setCount] = React.useState(0);
 
